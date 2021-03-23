@@ -63,6 +63,7 @@ buttonContinue.onclick = function(){
     maxRange = Number(maxRange.value);
     attemps = Number(attemps.value);
     randomNumber = getRandom(minRange, maxRange);
+    console.log(randomNumber)
 
     if(isValid(minRange,maxRange,attemps)){
         app.innerHTML = `Ты выбрал диапазон от ${minRange} до  ${maxRange} с количеством попыток - ${attemps},попробуй угадать мое число))`;
@@ -100,20 +101,31 @@ buttonContinue.onclick = function(){
     return true;
   }
 
-  
-
-
   buttonGessNumber.addEventListener('click',function(){
-    console.log(randomNumber)
+  //  console.log(randomNumber)
     var userNum = +(inputGessNumber.value);
+    var namDiffernrt = Math.abs(userNum -randomNumber);
     attemps--;
+    
+    
     if(attemps !== 0){
         if(userNum === randomNumber){
             resultDiv.innerHTML = 'Верно!Вы выиграли!'
         }
         else if(userNum < randomNumber || userNum > randomNumber){
             resultDiv.innerHTML = `Поробуй еще, осталось ${attemps} раз`;
-            let namDiffernrt = userNum -randomNumber;
+            if(counter >= 1){
+              console.log("namDiffernrt" ,namDiffernrt)
+              if(namDiffernrt > 10) {
+                resultDiv.innerHTML = `Холодно, Поробуй еще, осталось ${attemps} раз`;
+              }
+              else if(namDiffernrt > 5) {
+                resultDiv.innerHTML = `Теплее, Поробуй еще, осталось ${attemps} раз`;
+              }
+              else{
+                resultDiv.innerHTML = `Горячо, Поробуй еще, осталось ${attemps} раз`;
+              }
+            }
         }
     }
     else{
