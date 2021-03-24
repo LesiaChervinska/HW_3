@@ -2,13 +2,29 @@ body{
    background: #FFF0F5;
 }
 .app{
+   display: flex;
+   flex-direction: column;
    text-align: center;
+   align-items: center;
 }
-input{
+
+
+.app__input{
    margin: 10px;
-   
 }
-button{
+.app__input:focus{
+   outline-color:  rgb(207, 207, 33);
+}
+.app__button{
    margin: 10px;
    padding: 5px;
 }
+
+.app__button:hover{
+   box-shadow: 0 4px 5px rgba(0, 0, 0, 0.6);
+}
+
+.app__button-disabled{
+   background-color: rgb(143, 143, 143);
+}
+
