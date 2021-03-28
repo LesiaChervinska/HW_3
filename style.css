@@ -34,3 +34,6 @@ body{
    background-color: rgb(143, 143, 143);
 }
 
+input:nth-of-type(2n){
+   border: 2px solid rgb(20, 50, 224);
+}
