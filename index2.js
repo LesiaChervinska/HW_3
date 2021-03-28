@@ -58,7 +58,6 @@ var counter = 0;
 
 buttonStartGame.onclick = function () {
     app.innerHTML ="Выбери диапазон от 0 до 200,количество попыток от 1 до 15 и попрбуй угдать число)";
-    var textP = document.createElement('p').innerHTML = "Выбери диапазон от 0 до 200,количество попыток от 1 до 15 и попрбуй угдать число)"
     container.appendChild(minRange);
     container.appendChild(maxRange);
     container.appendChild(attemps);
@@ -103,7 +102,9 @@ buttonContinue.onclick = function(){
     var userNum = +(inputGessNumber.value);
     var namDiffernrt = Math.abs(userNum -randomNumber);
     attemps--;
+
     
+
     
     if(attemps !== 0){
         if(userNum === randomNumber){

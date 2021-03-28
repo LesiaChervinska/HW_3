@@ -6,6 +6,12 @@ body{
    flex-direction: column;
    text-align: center;
    align-items: center;
+   background-color: rgb(195, 236, 224);
+   width: 900px;
+   height: 200px;
+   margin: 0 auto;
+   padding: 20px;
+   border-radius: 20px;
 }
 
 
